@@ -8,16 +8,19 @@ import javax.persistence.*;
 public class Achat {
 
     private @Id @GeneratedValue long id;
-    @ManyToOne @JoinColumn(name="idDMO")
-    private DMO idDMO;
+    @ManyToOne @JoinColumn(name="idDmo")
+    private DMO idDmo;
     @ManyToOne @JoinColumn(name="idPharmacie")
     private Pharmacie idPharmacie;
     @ManyToOne @JoinColumn(name="idClient")
     private Client idClient;
+    @ManyToOne @JoinColumn(name="idProduit")
+    private Produit produit;
 
-    public Achat(DMO idDMO, Pharmacie idPharmacie, Client idClient) {
-        this.idDMO = idDMO;
+    public Achat(DMO idDmo, Pharmacie idPharmacie, Client idClient, Produit produit) {
+        this.idDmo = idDmo;
         this.idPharmacie = idPharmacie;
         this.idClient = idClient;
+        this.produit = produit;
     }
 }

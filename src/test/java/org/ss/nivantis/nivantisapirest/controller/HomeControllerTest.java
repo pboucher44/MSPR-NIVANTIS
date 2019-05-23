@@ -30,4 +30,3 @@ public class HomeControllerTest {
     public void createPharmacie() {
     }
 }
-//pierre la pute
