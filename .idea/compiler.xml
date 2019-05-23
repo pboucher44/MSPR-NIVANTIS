@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="nivantis-apirest" options="-parameters" />
+      <module name="nivantis-apirest" options="" />
     </option>
   </component>
 </project>
