@@ -1,0 +1,11 @@
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/controller/HomeController.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/DMO.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/Student.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/Produit.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/Achat.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/dao/StudentRepository.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/Pharmacie.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/dao/PharmacieRepository.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/NivantisApirestApplication.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/DatabaseLoader.java
+/Users/aloishias/Work/MSPR NIVANTIS/MSPR-NIVANTIS/src/main/java/org/ss/nivantis/nivantisapirest/model/Client.java

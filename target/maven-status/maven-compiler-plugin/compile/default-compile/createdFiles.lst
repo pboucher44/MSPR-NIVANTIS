@@ -1,0 +1,5 @@
+org/ss/nivantis/nivantisapirest/model/Achat.class
+org/ss/nivantis/nivantisapirest/DatabaseLoader.class
+org/ss/nivantis/nivantisapirest/model/Client.class
+org/ss/nivantis/nivantisapirest/model/Produit.class
+org/ss/nivantis/nivantisapirest/model/DMO.class
