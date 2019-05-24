@@ -17,6 +17,9 @@ public class Pharmacie {
     private double latitude;
     private double longitude;
 
+    public Pharmacie() {
+    }
+
     public Pharmacie(String adresse, int numero, int codePostal, double latitude, double longitude) {
         this.adresse = adresse;
         this.numero = numero;

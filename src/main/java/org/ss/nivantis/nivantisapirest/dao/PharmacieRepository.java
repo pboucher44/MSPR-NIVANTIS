@@ -5,4 +5,6 @@ import org.ss.nivantis.nivantisapirest.model.Pharmacie;
 
 public interface PharmacieRepository extends CrudRepository<Pharmacie, Long> {
 
+
+
 }

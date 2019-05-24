@@ -1,11 +1,15 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.model.Pharmacie;
+
+import java.util.Collection;
 
 @RestController
 public class HomeController {
@@ -37,12 +41,26 @@ public class HomeController {
         return vente/achat;
     }
 
-    @RequestMapping("/Insert/Pharmacie")
-    public void createPharmacie(@RequestParam("Adresse") String adresse,
-                                @RequestParam("Numero") int numero,
-                                @RequestParam("CodePostal") int cp,
-                                @RequestParam("Latitude") double latitude,
-                                @RequestParam("Longitude") double longitude){
-        pharmacieRepository.save(new Pharmacie(adresse, numero, cp, latitude, longitude));
+    @PostMapping("/Post")
+    public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie)
+    {
+
+        pharmacieRepository.save(pharmacie);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
+
+    @GetMapping("/get/Pharmacie")
+    public Collection<Pharmacie> findAllController()
+    {
+        return (Collection<Pharmacie>) pharmacieRepository.findAll();
+    }
+
+
+
+
+
+
+
+
+
 }
