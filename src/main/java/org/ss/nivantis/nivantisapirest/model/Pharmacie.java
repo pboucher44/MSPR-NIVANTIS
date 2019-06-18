@@ -1,5 +1,6 @@
 package org.ss.nivantis.nivantisapirest.model;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -14,14 +15,18 @@ public class Pharmacie {
     private String  adresse;
     private int numero;
     private int codePostal;
-    private double latitude;
-    private double longitude;
+    private float latitude;
+    private float longitude;
 
-    public Pharmacie(String adresse, int numero, int codePostal, double latitude, double longitude) {
+    public Pharmacie() {
+    }
+
+    public Pharmacie(String adresse, int numero, int codePostal, float latitude, float longitude) {
         this.adresse = adresse;
         this.numero = numero;
         this.codePostal = codePostal;
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
 }
