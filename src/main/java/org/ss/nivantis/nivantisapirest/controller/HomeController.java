@@ -1,25 +1,28 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
-import jdk.nashorn.internal.parser.JSONParser;
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
 import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
+import org.ss.nivantis.nivantisapirest.dao.ProduitRepository;
+import org.ss.nivantis.nivantisapirest.model.Achat;
 import org.ss.nivantis.nivantisapirest.model.Pharmacie;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 
 @RestController
 public class HomeController {
     @Autowired
     PharmacieRepository pharmacieRepository;
+    @Autowired
+    AchatRepository achatRepository;
+    @Autowired
+    ProduitRepository produitRepository;
+
 
     @GetMapping("/Marco")
     public String getMarco(){
@@ -28,8 +31,6 @@ public class HomeController {
 
     @GetMapping("/Math/TauxDeRemise")
     public float getTauxDeRemise(@RequestParam("Net") float net, @RequestParam("Brut") float brut ){
-
-
         return ((1-net/brut)*100);
     }
 
@@ -49,9 +50,7 @@ public class HomeController {
     }
 
     @PostMapping("/Post")
-    public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie)
-    {
-
+    public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie) {
         pharmacieRepository.save(pharmacie);
         return ResponseEntity.ok(HttpStatus.OK);
     }
@@ -63,10 +62,7 @@ public class HomeController {
     }
 
     @GetMapping("/get/PharmacieProche")
-    public ArrayList findProche(
-            @RequestParam("latitude") float latitude, @RequestParam("longitude") float longitude)
-    {
-
+    public ArrayList findProche(@RequestParam("latitude") float latitude, @RequestParam("longitude") float longitude) {
         ArrayList arraylist = new ArrayList();
         arraylist.add(pharmacieRepository.findAll());
         JSONArray jsonarr_1 = new JSONArray(arraylist);
@@ -74,18 +70,13 @@ public class HomeController {
     }
 
     @GetMapping("/get/PharmacieId")
-    public Optional<Pharmacie> findById(
-            @RequestParam("Id") long id)
-    {
+    public Optional<Pharmacie> findById(@RequestParam("Id") Long id) {
         return pharmacieRepository.findById(id);
     }
 
-
-
-
-
-
-
-
+    @GetMapping("/get/PharmaciePosition")
+    public Optional<Pharmacie> findPositionOfPhamarcie(@RequestParam("id") Long id){
+        return pharmacieRepository.findById(id);
+    }
 
 }
