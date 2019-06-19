@@ -17,6 +17,10 @@ public class Achat {
     @ManyToOne @JoinColumn(name="idProduit")
     private Produit produit;
 
+    public Achat(){
+
+    }
+
     public Achat(DMO idDmo, Pharmacie idPharmacie, Client idClient, Produit produit) {
         this.idDmo = idDmo;
         this.idPharmacie = idPharmacie;
