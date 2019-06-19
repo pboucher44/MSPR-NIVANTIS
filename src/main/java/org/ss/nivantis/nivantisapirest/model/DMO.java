@@ -19,6 +19,10 @@ public class DMO {
     @OneToMany(targetEntity = Achat.class)
     private List<Achat> achats;
 
+    public DMO(){
+
+    }
+
     public DMO(String nom, String prenom, String login, String password, List<Achat> achats) {
         this.nom = nom;
         this.prenom = prenom;

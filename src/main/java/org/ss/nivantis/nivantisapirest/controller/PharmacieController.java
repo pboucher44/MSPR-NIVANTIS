@@ -46,4 +46,6 @@ public class PharmacieController {
     public Optional<Pharmacie> findPositionOfPhamarcie(@RequestParam("id") Long id){
         return pharmacieRepository.findById(id);
     }
+
+
 }
