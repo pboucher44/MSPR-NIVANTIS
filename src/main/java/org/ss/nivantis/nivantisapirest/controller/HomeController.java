@@ -55,28 +55,4 @@ public class HomeController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @GetMapping("/get/Pharmacie")
-    public Collection<Pharmacie> findAllController()
-    {
-        return (Collection<Pharmacie>) pharmacieRepository.findAll();
-    }
-
-    @GetMapping("/get/PharmacieProche")
-    public ArrayList findProche(@RequestParam("latitude") float latitude, @RequestParam("longitude") float longitude) {
-        ArrayList arraylist = new ArrayList();
-        arraylist.add(pharmacieRepository.findAll());
-        JSONArray jsonarr_1 = new JSONArray(arraylist);
-        return arraylist;
-    }
-
-    @GetMapping("/get/PharmacieId")
-    public Optional<Pharmacie> findById(@RequestParam("Id") Long id) {
-        return pharmacieRepository.findById(id);
-    }
-
-    @GetMapping("/get/PharmaciePosition")
-    public Optional<Pharmacie> findPositionOfPhamarcie(@RequestParam("id") Long id){
-        return pharmacieRepository.findById(id);
-    }
-
 }
