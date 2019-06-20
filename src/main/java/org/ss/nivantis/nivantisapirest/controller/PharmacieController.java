@@ -52,7 +52,7 @@ public class PharmacieController {
 
         Object keyfinal  = sm.keySet().toArray()[0];
         Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
-        String sortie = "?pos="+proche.getLongitude()+","+proche.getLatitude()+"?distance="+test[0].toString();
+        String sortie = "?pos="+proche.getLatitude()+","+proche.getLongitude()+"?distance="+test[0].toString();
         return sortie;
     }
 
