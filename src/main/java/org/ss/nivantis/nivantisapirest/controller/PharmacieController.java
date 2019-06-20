@@ -1,6 +1,5 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,18 +27,33 @@ public class PharmacieController {
     }
 
     @GetMapping("/get/PharmacieProche")
-    public Map<Double, Long> findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
+    public String findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
     {
 
-        Map<Double,Long> proche = new HashMap<>();
+
+        SortedMap<Double,Long> sm =
+                new TreeMap<Double,Long>();
 
         for(int i=0;i<pharmacieRepository.findAll().size(); i++) {
             Pharmacie pharmacie = pharmacieRepository.findAll().get(i);
-            proche.put(Pharmacie.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
+            sm.put(Pharmacie.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
                     Double.parseDouble(pharmacie.getLongitude())),pharmacie.getId());
         }
-        //Map<Double,Long> sortedMap =  Ordering.natural().onResultOf(Functions.forMap(proche));
-        return proche;
+        Set s = sm.entrySet();
+        Iterator i = s.iterator();
+        while (i.hasNext())
+        {
+            Map.Entry m = (Map.Entry)i.next();
+
+            double key = (double)m.getKey();
+            long value = (long)m.getValue();
+        }
+        Object[] test = sm.keySet().toArray();
+
+        Object keyfinal  = sm.keySet().toArray()[0];
+        Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
+        String sortie = "?pos="+proche.getLongitude()+","+proche.getLatitude()+"?distance="+test[0].toString();
+        return sortie;
     }
 
     @GetMapping("/get/PharmacieId")
