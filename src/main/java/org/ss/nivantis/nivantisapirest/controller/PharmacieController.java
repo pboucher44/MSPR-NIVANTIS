@@ -10,9 +10,7 @@ import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.dao.ProduitRepository;
 import org.ss.nivantis.nivantisapirest.model.Pharmacie;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 public class PharmacieController {
@@ -30,11 +28,18 @@ public class PharmacieController {
     }
 
     @GetMapping("/get/PharmacieProche")
-    public ArrayList findProche(@RequestParam("latitude") float latitude, @RequestParam("longitude") float longitude) {
-        ArrayList arraylist = new ArrayList();
-        arraylist.add(pharmacieRepository.findAll());
-        JSONArray jsonarr_1 = new JSONArray(arraylist);
-        return arraylist;
+    public Map<Double, Long> findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
+    {
+
+        Map<Double,Long> proche = new HashMap<>();
+
+        for(int i=0;i<pharmacieRepository.findAll().size(); i++) {
+            Pharmacie pharmacie = pharmacieRepository.findAll().get(i);
+            proche.put(Pharmacie.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
+                    Double.parseDouble(pharmacie.getLongitude())),pharmacie.getId());
+        }
+        //Map<Double,Long> sortedMap =  Ordering.natural().onResultOf(Functions.forMap(proche));
+        return proche;
     }
 
     @GetMapping("/get/PharmacieId")

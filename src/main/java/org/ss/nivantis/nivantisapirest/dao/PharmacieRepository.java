@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PharmacieRepository extends CrudRepository<Pharmacie, Long> {
 
-
+    List<Pharmacie> findAll();
 
 
 
