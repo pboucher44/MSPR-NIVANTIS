@@ -2,9 +2,9 @@ package org.ss.nivantis.nivantisapirest.controller;
 
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
 import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.dao.ProduitRepository;
@@ -45,6 +45,12 @@ public class PharmacieController {
     @GetMapping("/get/PharmaciePosition")
     public Optional<Pharmacie> findPositionOfPhamarcie(@RequestParam("id") Long id){
         return pharmacieRepository.findById(id);
+    }
+
+    @PostMapping("/Post")
+    public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie) {
+        pharmacieRepository.save(pharmacie);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 

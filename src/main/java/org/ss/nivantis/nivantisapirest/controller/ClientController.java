@@ -1,21 +1,27 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.ss.nivantis.nivantisapirest.dao.ClientRepository;
 import org.ss.nivantis.nivantisapirest.model.Client;
-import org.ss.nivantis.nivantisapirest.model.Produit;
 
 import java.util.Optional;
 
 @RestController
 public class ClientController {
     @Autowired
-    ClientController clientRepository;
+    ClientRepository clientRepository;
 
     @GetMapping("/get/ClientById")
     public Optional<Client> findById(@RequestParam("Id") Long id) {
         return clientRepository.findById(id);
+    }
+
+    @PostMapping("/NewClient")
+    public ResponseEntity createClient(@RequestBody Client client) {
+        clientRepository.save(client);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }

@@ -49,10 +49,4 @@ public class HomeController {
         return vente/achat;
     }
 
-    @PostMapping("/Post")
-    public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie) {
-        pharmacieRepository.save(pharmacie);
-        return ResponseEntity.ok(HttpStatus.OK);
-    }
-
 }
