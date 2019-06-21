@@ -52,7 +52,7 @@ public class PharmacieController {
 
         Object keyfinal  = sm.keySet().toArray()[0];
         Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
-        String sortie = "?pos="+proche.getLatitude()+","+proche.getLongitude()+"?distance="+test[0].toString();
+        String sortie = "http://pboucher.ddns.net/dorade/index.htm"+"?pos="+proche.getLatitude()+","+proche.getLongitude()+"?distance="+test[0].toString();
         return sortie;
     }
 
