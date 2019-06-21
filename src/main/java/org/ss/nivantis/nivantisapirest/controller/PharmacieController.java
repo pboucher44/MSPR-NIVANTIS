@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.ss.nivantis.nivantisapirest.Service.PharmacieService;
 import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
 import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.dao.ProduitRepository;
@@ -19,6 +20,7 @@ public class PharmacieController {
     AchatRepository achatRepository;
     @Autowired
     ProduitRepository produitRepository;
+    PharmacieService pharmacieService;
 
     @GetMapping("/get/Pharmacie")
     public Collection<Pharmacie> findAllController()
@@ -30,30 +32,7 @@ public class PharmacieController {
     public String findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
     {
 
-
-        SortedMap<Double,Long> sm =
-                new TreeMap<Double,Long>();
-
-        for(int i=0;i<pharmacieRepository.findAll().size(); i++) {
-            Pharmacie pharmacie = pharmacieRepository.findAll().get(i);
-            sm.put(Pharmacie.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
-                    Double.parseDouble(pharmacie.getLongitude())),pharmacie.getId());
-        }
-        Set s = sm.entrySet();
-        Iterator i = s.iterator();
-        while (i.hasNext())
-        {
-            Map.Entry m = (Map.Entry)i.next();
-
-            double key = (double)m.getKey();
-            long value = (long)m.getValue();
-        }
-        Object[] test = sm.keySet().toArray();
-
-        Object keyfinal  = sm.keySet().toArray()[0];
-        Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
-        String sortie = "?pos="+proche.getLatitude()+","+proche.getLongitude()+"?distance="+test[0].toString();
-        return sortie;
+        return pharmacieService.GetProche(latitude,longitude);
     }
 
     @GetMapping("/get/PharmacieId")
