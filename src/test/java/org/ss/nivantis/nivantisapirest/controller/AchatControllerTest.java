@@ -53,6 +53,19 @@ public class AchatControllerTest {
     }
 
     @Test
+    public void testCreateAchatNull() throws Exception {
+        Achat monAchatASave = null;
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = mapper.writeValueAsString(monAchatASave);
+
+        given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
+
+        ResponseEntity maReponse = service.createAchat(monAchatASave);
+        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
+
+    }
+
+    @Test
     public void testFindByIdAchat() throws Exception {
         DMO monDmo = new DMO("BOUCHER","Pierre","pboucher","pboucher",new ArrayList<Achat>());
         Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
@@ -75,6 +88,24 @@ public class AchatControllerTest {
 
         Optional<Achat> monAchatRetourne = service.findById(monAchatASave.getId());
         Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(achatReturned));
+
+    }
+
+    @Test
+    public void testFindByIdAchatNull() throws Exception {
+        given(service.findById(null)).willReturn(java.util.Optional.ofNullable(null));
+
+        Optional<Achat> monAchatRetourne = service.findById(null);
+        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
+
+    }
+
+    @Test
+    public void testFindByIdAchatInnexistant() throws Exception {
+        given(service.findById(9999L)).willReturn(java.util.Optional.ofNullable(null));
+
+        Optional<Achat> monAchatRetourne = service.findById(9999L);
+        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
 
     }
 
