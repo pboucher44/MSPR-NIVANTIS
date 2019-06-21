@@ -1,6 +1,7 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.ss.nivantis.nivantisapirest.model.*;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -45,10 +47,8 @@ public class AchatControllerTest {
 
         given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
 
-        mvc.perform(post("/NewAchat")
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
+        ResponseEntity maReponse = service.createAchat(monAchatASave);
+        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
 
     }
 
@@ -67,18 +67,14 @@ public class AchatControllerTest {
 
         given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
 
-        mvc.perform(post("/NewAchat")
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
+        ResponseEntity maReponse = service.createAchat(monAchatASave);
+        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
 
         Achat achatReturned = monAchatASave;
         given(service.findById(monAchatASave.getId())).willReturn(java.util.Optional.ofNullable(achatReturned));
 
-        mvc.perform(get("/get/AchatById")
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
+        Optional<Achat> monAchatRetourne = service.findById(monAchatASave.getId());
+        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(achatReturned));
 
     }
 
