@@ -17,6 +17,7 @@ public class Pharmacie {
     private int codePostal;
     private String latitude;
     private String longitude;
+    private String libelle;
     @OneToMany(targetEntity = Achat.class)
     private List<Achat> achats;
 
@@ -24,13 +25,14 @@ public class Pharmacie {
 
     }
 
-    public Pharmacie(String adresse, int numero, int codePostal, String latitude, String longitude, List<Achat> achats) {
+    public Pharmacie(String adresse, int numero, int codePostal, String latitude, String longitude, String libelle, List<Achat> achats) {
         this.adresse = adresse;
         this.numero = numero;
         this.codePostal = codePostal;
         this.latitude = latitude;
         this.longitude = longitude;
         this.achats = achats;
+        this.libelle = libelle;
     }
 
     public Long getId() {
@@ -87,5 +89,13 @@ public class Pharmacie {
 
     public void setAchats(List<Achat> achats) {
         this.achats = achats;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 }
