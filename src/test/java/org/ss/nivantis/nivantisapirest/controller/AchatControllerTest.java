@@ -12,18 +12,21 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
+import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.model.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(AchatController.class)
+@WebMvcTest(PharmacieRepository.class)
 public class AchatControllerTest {
 
     @Autowired
@@ -31,6 +34,9 @@ public class AchatControllerTest {
 
     @MockBean
     private AchatController service;
+
+    @MockBean
+    private AchatRepository achatRepo;
 
     @Test
     public void testCreateAchat() throws Exception {
@@ -45,10 +51,10 @@ public class AchatControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(monAchatASave);
 
-        given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
+        when(achatRepo.save(monAchatASave)).thenReturn(monAchatASave);
 
         ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
+        Assert.assertEquals(null,maReponse);
 
     }
 
@@ -58,10 +64,10 @@ public class AchatControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(monAchatASave);
 
-        given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
+        given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
 
         ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
+        Assert.assertEquals(maReponse,null);
 
     }
 
@@ -78,22 +84,22 @@ public class AchatControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(monAchatASave);
 
-        given(service.createAchat(monAchatASave)).willReturn(ResponseEntity.ok(HttpStatus.OK));
+        given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
 
         ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(maReponse,ResponseEntity.ok(HttpStatus.OK));
+        Assert.assertEquals(maReponse,null);
 
         Achat achatReturned = monAchatASave;
-        given(service.findById(monAchatASave.getId())).willReturn(java.util.Optional.ofNullable(achatReturned));
+        given(achatRepo.findById(monAchatASave.getId())).willReturn(java.util.Optional.ofNullable(achatReturned));
 
         Optional<Achat> monAchatRetourne = service.findById(monAchatASave.getId());
-        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(achatReturned));
+        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
 
     }
 
     @Test
     public void testFindByIdAchatNull() throws Exception {
-        given(service.findById(null)).willReturn(java.util.Optional.ofNullable(null));
+        given(achatRepo.findById(null)).willReturn(java.util.Optional.ofNullable(null));
 
         Optional<Achat> monAchatRetourne = service.findById(null);
         Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
@@ -102,7 +108,7 @@ public class AchatControllerTest {
 
     @Test
     public void testFindByIdAchatInnexistant() throws Exception {
-        given(service.findById(9999L)).willReturn(java.util.Optional.ofNullable(null));
+        given(achatRepo.findById(9999L)).willReturn(java.util.Optional.ofNullable(null));
 
         Optional<Achat> monAchatRetourne = service.findById(9999L);
         Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
