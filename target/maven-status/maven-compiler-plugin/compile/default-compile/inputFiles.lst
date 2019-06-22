@@ -1,19 +1,20 @@
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\configuration\SwaggerConfig.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\DMOController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\PharmacieController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\dao\PharmacieRepository.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\dao\DMORepository.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\dao\ProduitRepository.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\AchatController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\ProduitController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\ClientController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\model\Produit.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\DatabaseLoader.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\controller\HomeController.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\model\Achat.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\dao\AchatRepository.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\dao\ClientRepository.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\NivantisApirestApplication.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\model\Client.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\model\Pharmacie.java
-C:\Users\Remi-\IdeaProjects\MSPR-NIVANTIS-Pierre\src\main\java\org\ss\nivantis\nivantisapirest\model\DMO.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\DMOController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\model\Pharmacie.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\model\Produit.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\DatabaseLoader.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\ProduitController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\Service\PharmacieService.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\dao\DMORepository.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\ClientController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\model\DMO.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\dao\ClientRepository.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\NivantisApirestApplication.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\PharmacieController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\model\Client.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\dao\PharmacieRepository.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\dao\ProduitRepository.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\dao\AchatRepository.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\model\Achat.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\AchatController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\controller\HomeController.java
+D:\EPSI\workspace\vrai dorade\src\main\java\org\ss\nivantis\nivantisapirest\configuration\SwaggerConfig.java
