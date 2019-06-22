@@ -1,59 +1,43 @@
 package org.ss.nivantis.nivantisapirest.service;
 
-        import org.junit.Assert;
-        import org.junit.Test;
-        import org.junit.runner.RunWith;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-        import org.springframework.boot.test.mock.mockito.MockBean;
-        import org.springframework.http.HttpStatus;
-        import org.springframework.http.ResponseEntity;
-        import org.springframework.test.context.junit4.SpringRunner;
-        import org.ss.nivantis.nivantisapirest.Service.PharmacieService;
-        import org.ss.nivantis.nivantisapirest.controller.AchatController;
-        import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
-        import org.ss.nivantis.nivantisapirest.model.Achat;
-        import org.ss.nivantis.nivantisapirest.model.Pharmacie;
+import org.junit.Before;
+import org.junit.Test;
+import org.ss.nivantis.nivantisapirest.Service.PharmacieService;
+import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
+import org.ss.nivantis.nivantisapirest.model.Achat;
+import org.ss.nivantis.nivantisapirest.model.Pharmacie;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-        import static org.junit.Assert.*;
-        import static org.mockito.BDDMockito.given;
-        import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(PharmacieRepository.class)
 public class PharmacieServiceTest {
 
-    @MockBean
-    private PharmacieService pharmacieService;
+    private PharmacieService pharmacieServiceUnderTest;
 
-    @MockBean
-    PharmacieRepository pharmacieRepository;
-
-    @Test
-    public void getdistance() {
-        double maDistance = pharmacieService.distance(1d, 1d, 2d, 2d);
-        assertEquals(maDistance,157.2178677858709d,0.0001);
+    @Before
+    public void setUp() {
+        pharmacieServiceUnderTest = new PharmacieService();
+        pharmacieServiceUnderTest.pharmacieRepository = mock(PharmacieRepository.class);
     }
 
     @Test
-    public void GetProche() {
-        Pharmacie proche = new Pharmacie("adresse",87,44444,"2","2","proche",new ArrayList<Achat>());
-        proche.setId(0L);
-        Pharmacie loin = new Pharmacie("adresse",87,44444,"3","3","proche",new ArrayList<Achat>());
-        proche.setId(1L);
-        List<Pharmacie> lesPharmacieEnregistrees = new ArrayList<>();
+    public void testDistance() {
+        // Setup
+        final double lat1 = 0.0;
+        final double lon1 = 0.0;
+        final double lat2 = 0.0;
+        final double lon2 = 0.0;
+        final double expectedResult = 0.0;
 
-        lesPharmacieEnregistrees.add(proche);
-        lesPharmacieEnregistrees.add(loin);
+        // Run the test
+        final double result = PharmacieService.distance(lat1, lon1, lat2, lon2);
 
-        when(pharmacieRepository.findAll()).thenReturn(lesPharmacieEnregistrees);
-        when(pharmacieRepository.findPharmacieById(0L)).thenReturn(proche);
-
-        String laPlusProche = pharmacieService.GetProche("1","1");
-
-        Assert.assertEquals(null,laPlusProche);
+        // Verify the results
+        assertEquals(expectedResult, result, 0.0001);
     }
 }

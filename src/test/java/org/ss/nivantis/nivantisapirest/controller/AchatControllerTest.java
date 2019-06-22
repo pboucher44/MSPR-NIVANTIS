@@ -1,45 +1,34 @@
 package org.ss.nivantis.nivantisapirest.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
-import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.model.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import static org.mockito.BDDMockito.given;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(PharmacieRepository.class)
 public class AchatControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+    private AchatController achatControllerUnderTest;
 
-    @MockBean
-    private AchatController service;
-
-    @MockBean
-    private AchatRepository achatRepo;
+    @Before
+    public void setUp() {
+        achatControllerUnderTest = new AchatController();
+        achatControllerUnderTest.achatRepository = mock(AchatRepository.class);
+    }
 
     @Test
-    public void testCreateAchat() throws Exception {
+    public void testFindById() {
+        // Setup
+        final Long id = 0L;
+        final Optional<Achat> expectedResult = null;
         DMO monDmo = new DMO("BOUCHER","Pierre","pboucher","pboucher",new ArrayList<Achat>());
         Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
         maPharmacie.setId(0L);
@@ -48,71 +37,27 @@ public class AchatControllerTest {
         Produit monProduit = new Produit(5,"libelle",new ArrayList<Achat>());
         monProduit.setId(0L);
         Achat monAchatASave = new Achat(monDmo,maPharmacie,monClient,monProduit);
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = mapper.writeValueAsString(monAchatASave);
 
-        when(achatRepo.save(monAchatASave)).thenReturn(monAchatASave);
+        when(achatControllerUnderTest.achatRepository.findById(0L)).thenReturn(Optional.of(monAchatASave));
 
-        ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(null,maReponse);
+        // Run the test
+        final Optional<Achat> result = achatControllerUnderTest.findById(id);
 
+        // Verify the results
+        assertEquals(Optional.of(monAchatASave), result);
     }
 
     @Test
-    public void testCreateAchatNull() throws Exception {
-        Achat monAchatASave = null;
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = mapper.writeValueAsString(monAchatASave);
+    public void testCreateAchat() {
+        // Setup
+        final Achat achat = null;
+        final ResponseEntity expectedResult = null;
+        when(achatControllerUnderTest.achatRepository.save(null)).thenReturn(null);
 
-        given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
+        // Run the test
+        final ResponseEntity result = achatControllerUnderTest.createAchat(achat);
 
-        ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(maReponse,null);
-
+        // Verify the results
+        assertEquals(HttpStatus.OK.value(), result.getStatusCodeValue());
     }
-
-    @Test
-    public void testFindByIdAchat() throws Exception {
-        DMO monDmo = new DMO("BOUCHER","Pierre","pboucher","pboucher",new ArrayList<Achat>());
-        Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
-        maPharmacie.setId(0L);
-        Client monClient = new Client("BOUCHER","Pierre","mail@mail.fr","0654478956",new ArrayList<Achat>());
-        monClient.setId(0L);
-        Produit monProduit = new Produit(5,"libelle",new ArrayList<Achat>());
-        monProduit.setId(0L);
-        Achat monAchatASave = new Achat(monDmo,maPharmacie,monClient,monProduit);
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = mapper.writeValueAsString(monAchatASave);
-
-        given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
-
-        ResponseEntity maReponse = service.createAchat(monAchatASave);
-        Assert.assertEquals(maReponse,null);
-
-        Achat achatReturned = monAchatASave;
-        given(achatRepo.findById(monAchatASave.getId())).willReturn(java.util.Optional.ofNullable(achatReturned));
-
-        Optional<Achat> monAchatRetourne = service.findById(monAchatASave.getId());
-        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
-
-    }
-
-    @Test
-    public void testFindByIdAchatNull() throws Exception {
-        given(achatRepo.findById(null)).willReturn(java.util.Optional.ofNullable(null));
-
-        Optional<Achat> monAchatRetourne = service.findById(null);
-        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
-
-    }
-
-    @Test
-    public void testFindByIdAchatInnexistant() throws Exception {
-        given(achatRepo.findById(9999L)).willReturn(java.util.Optional.ofNullable(null));
-
-        Optional<Achat> monAchatRetourne = service.findById(9999L);
-        Assert.assertEquals(monAchatRetourne,java.util.Optional.ofNullable(null));
-
-    }
-
 }
