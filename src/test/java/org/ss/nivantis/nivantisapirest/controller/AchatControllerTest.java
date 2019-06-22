@@ -10,7 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
@@ -52,18 +51,10 @@ public class AchatControllerTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(monAchatASave);
 
-        given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
+        when(achatRepo.save(monAchatASave)).thenReturn(monAchatASave);
 
-        // when
-        MockHttpServletResponse response = mvc.perform(
-                post("/NewAchat")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(jsonString)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andReturn().getResponse();
-
-        // then
-        Assert.assertEquals(response.getStatus(),HttpStatus.OK.value());
+        ResponseEntity maReponse = service.createAchat(monAchatASave);
+        Assert.assertEquals(null,maReponse);
 
     }
 
@@ -75,16 +66,8 @@ public class AchatControllerTest {
 
         given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
 
-        // when
-        MockHttpServletResponse response = mvc.perform(
-                post("/NewAchat")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(jsonString)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andReturn().getResponse();
-
-        // then
-        Assert.assertEquals(response.getStatus(),HttpStatus.BAD_REQUEST.value());
+        ResponseEntity maReponse = service.createAchat(monAchatASave);
+        Assert.assertEquals(maReponse,null);
 
     }
 
@@ -102,18 +85,6 @@ public class AchatControllerTest {
         String jsonString = mapper.writeValueAsString(monAchatASave);
 
         given(achatRepo.save(monAchatASave)).willReturn(monAchatASave);
-
-        // when
-        MockHttpServletResponse response = mvc.perform(
-                post("/NewAchat")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(jsonString)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andReturn().getResponse();
-
-        // then
-        //Assert.assertEquals(response.getStatus(),HttpStatus.CREATED.value());
-        Assert.assertEquals(response.getStatus(),HttpStatus.OK.value());
 
         ResponseEntity maReponse = service.createAchat(monAchatASave);
         Assert.assertEquals(maReponse,null);
