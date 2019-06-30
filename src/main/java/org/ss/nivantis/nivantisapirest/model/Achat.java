@@ -27,4 +27,44 @@ public class Achat {
         this.idClient = idClient;
         this.produit = produit;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public DMO getIdDmo() {
+        return idDmo;
+    }
+
+    public void setIdDmo(DMO idDmo) {
+        this.idDmo = idDmo;
+    }
+
+    public Pharmacie getIdPharmacie() {
+        return idPharmacie;
+    }
+
+    public void setIdPharmacie(Pharmacie idPharmacie) {
+        this.idPharmacie = idPharmacie;
+    }
+
+    public Client getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(Client idClient) {
+        this.idClient = idClient;
+    }
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
+    }
 }
