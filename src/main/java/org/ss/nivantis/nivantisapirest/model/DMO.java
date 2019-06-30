@@ -18,7 +18,10 @@ public class DMO {
     private String password;
     @OneToMany(targetEntity = Achat.class)
     private List<Achat> achats;
-
+    @OneToMany(targetEntity = Question.class)
+    private List<Question> questions;
+    @OneToMany(targetEntity = Response.class)
+    private List<Response> responses;
     public DMO(){
 
     }

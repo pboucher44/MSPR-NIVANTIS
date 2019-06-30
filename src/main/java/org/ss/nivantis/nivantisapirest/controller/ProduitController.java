@@ -20,8 +20,8 @@ public class ProduitController {
     }
 
     @PostMapping("/NewProduit")
-    public ResponseEntity createProduit(@RequestBody Produit produit) {
-        produitRepository.save(produit);
+        public ResponseEntity createProduit(@RequestBody Produit produit) {
+            produitRepository.save(produit);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 }
