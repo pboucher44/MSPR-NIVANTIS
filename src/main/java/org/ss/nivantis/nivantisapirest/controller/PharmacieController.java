@@ -20,7 +20,8 @@ public class PharmacieController {
     AchatRepository achatRepository;
     @Autowired
     ProduitRepository produitRepository;
-    PharmacieService pharmacieService;
+
+
 
     @GetMapping("/get/Pharmacie")
     public Collection<Pharmacie> findAllController()
@@ -31,8 +32,30 @@ public class PharmacieController {
     @GetMapping("/get/PharmacieProche")
     public String findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
     {
+        PharmacieService pharmacieService = new PharmacieService();
+        SortedMap<Double,Long> sm =
+                new TreeMap<Double,Long>();
 
-        return pharmacieService.GetProche(latitude,longitude);
+        for(int i=0;i<pharmacieRepository.findAll().size(); i++) {
+            Pharmacie pharmacie = pharmacieRepository.findAll().get(i);
+            sm.put(pharmacieService.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
+                    Double.parseDouble(pharmacie.getLongitude())),pharmacie.getId());
+        }
+        Set s = sm.entrySet();
+        Iterator i = s.iterator();
+        while (i.hasNext())
+        {
+            Map.Entry m = (Map.Entry)i.next();
+
+            double key = (double)m.getKey();
+            long value = (long)m.getValue();
+        }
+        Object[] test = sm.keySet().toArray();
+
+        Object keyfinal  = sm.keySet().toArray()[0];
+        Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
+        String sortie = "http://pboucher.ddns.net/dorade/index.htm"+"?pos="+proche.getLatitude()+","+proche.getLongitude()+"?distance="+test[0].toString();
+        return sortie;
     }
 
     @GetMapping("/get/PharmacieId")

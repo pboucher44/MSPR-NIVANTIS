@@ -2,6 +2,7 @@ package org.ss.nivantis.nivantisapirest.service;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.ss.nivantis.nivantisapirest.Service.PharmacieService;
 import org.ss.nivantis.nivantisapirest.dao.PharmacieRepository;
 import org.ss.nivantis.nivantisapirest.model.Achat;
@@ -17,12 +18,13 @@ import static org.mockito.Mockito.when;
 
 public class PharmacieServiceTest {
 
-    private PharmacieService pharmacieServiceUnderTest;
+    @Autowired
+    PharmacieService pharmacieServiceUnderTest;
 
     @Before
     public void setUp() {
         pharmacieServiceUnderTest = new PharmacieService();
-        pharmacieServiceUnderTest.pharmacieRepository = mock(PharmacieRepository.class);
+       // pharmacieServiceUnderTest.pharmacieRepository = mock(PharmacieRepository.class);
     }
 
     @Test
