@@ -1,3 +1,7 @@
+org\ss\nivantis\nivantisapirest\controller\PharmacieControllerTest.class
+org\ss\nivantis\nivantisapirest\service\PharmacieServiceTest.class
 org\ss\nivantis\nivantisapirest\controller\AchatControllerTest.class
 org\ss\nivantis\nivantisapirest\controller\HomeControllerTest.class
-org\ss\nivantis\nivantisapirest\service\PharmacieServiceTest.class
+org\ss\nivantis\nivantisapirest\controller\DMOControllerTest.class
+org\ss\nivantis\nivantisapirest\controller\ProduitControllerTest.class
+org\ss\nivantis\nivantisapirest\controller\ClientControllerTest.class

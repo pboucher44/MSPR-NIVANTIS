@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.ss.nivantis.nivantisapirest.dao.DMORepository;
 import org.ss.nivantis.nivantisapirest.model.Achat;
 import org.ss.nivantis.nivantisapirest.model.DMO;
+import org.ss.nivantis.nivantisapirest.model.Question;
+import org.ss.nivantis.nivantisapirest.model.Response;
 
 import java.util.ArrayList;
 import java.util.Optional;

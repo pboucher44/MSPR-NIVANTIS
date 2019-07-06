@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/collections/ObservableList.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />
@@ -24,6 +29,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/Service/PharmacieService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/controller/AchatController.java">
           <value>
             <set />
           </value>
@@ -44,6 +54,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/controller/ResponseController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/dao/AchatRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/dao/DMORepository.java">
           <value>
             <set />
           </value>
@@ -93,12 +113,67 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/controller/AchatControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/controller/DMOControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/service/PharmacieServiceTest.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXML.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/DrawerManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/GluonApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/PharmaciePresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/PharmacieView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/httpHelper/HttpHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/menu.fxml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/pharmacie.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/pharmacie.fxml">
           <value>
             <set />
           </value>

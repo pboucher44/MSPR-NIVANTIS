@@ -18,10 +18,11 @@ public class DMO {
     private String password;
     @OneToMany(targetEntity = Achat.class)
     private List<Achat> achats;
-    @OneToMany(targetEntity = Question.class)
+   /* @OneToMany(targetEntity = Question.class)
     private List<Question> questions;
     @OneToMany(targetEntity = Response.class)
-    private List<Response> responses;
+    private List<Response> responses;*/
+
     public DMO(){
 
     }
@@ -32,5 +33,6 @@ public class DMO {
         this.login = login;
         this.password = password;
         this.achats = achats;
+
     }
 }
