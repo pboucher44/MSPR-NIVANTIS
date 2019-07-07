@@ -2,8 +2,10 @@ package org.ss.nivantis.nivantisapirest.controller;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.ss.nivantis.nivantisapirest.dao.ResponseRepository;
+import org.ss.nivantis.nivantisapirest.model.Achat;
 import org.ss.nivantis.nivantisapirest.model.Response;
 
 import java.util.Arrays;
@@ -21,6 +23,20 @@ public class ResponseControllerTest {
     public void setUp() {
         responseControllerUnderTest = new ResponseController();
         responseControllerUnderTest.responseRepository = mock(ResponseRepository.class);
+    }
+
+    @Test
+    public void testCreateAchat() {
+        // Setup
+        final Response rep = null;
+        final ResponseEntity expectedResult = null;
+        when(responseControllerUnderTest.responseRepository.save(null)).thenReturn(null);
+
+        // Run the test
+        final ResponseEntity result = responseControllerUnderTest.createResponse(rep);
+
+        // Verify the results
+        assertEquals(HttpStatus.OK.value(), result.getStatusCodeValue());
     }
 
     @Test
