@@ -8,6 +8,8 @@ import org.ss.nivantis.nivantisapirest.dao.AchatRepository;
 import org.ss.nivantis.nivantisapirest.model.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
@@ -45,6 +47,19 @@ public class AchatControllerTest {
 
         // Verify the results
         assertEquals(Optional.of(monAchatASave), result);
+    }
+
+    @Test
+    public void testFindAll() {
+        // Setup
+        final Iterable<Achat> expectedResult = null;
+        when(achatControllerUnderTest.achatRepository.findAll()).thenReturn(null);
+
+        // Run the test
+        final Iterable<Achat> result = achatControllerUnderTest.findAll();
+
+        // Verify the results
+        assertEquals(expectedResult, result);
     }
 
     @Test
