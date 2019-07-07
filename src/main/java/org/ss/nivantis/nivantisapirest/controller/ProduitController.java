@@ -19,6 +19,11 @@ public class ProduitController {
         return produitRepository.findById(id);
     }
 
+    @GetMapping("/get/AllProduit")
+    public Iterable<Produit> findAll() {
+        return produitRepository.findAll();
+    }
+
     @PostMapping("/NewProduit")
         public ResponseEntity createProduit(@RequestBody Produit produit) {
             produitRepository.save(produit);

@@ -148,12 +148,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/object/Produit.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/CalculatorPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/PharmaciePresenter.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/PharmacieView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/ProduitPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/ProduitView.java">
           <value>
             <set />
           </value>
@@ -174,6 +194,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/pharmacie.fxml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/produit.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/produit.fxml">
           <value>
             <set />
           </value>

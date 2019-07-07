@@ -68,6 +68,34 @@ public class PharmacieController {
         return pharmacieRepository.findById(id);
     }
 
+    @GetMapping("/get/PharmacieProcheInfo")
+    public Pharmacie findPhamarcie(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude){
+        PharmacieService pharmacieService = new PharmacieService();
+        SortedMap<Double,Long> sm =
+                new TreeMap<Double,Long>();
+
+        for(int i=0;i<pharmacieRepository.findAll().size(); i++) {
+            Pharmacie pharmacie = pharmacieRepository.findAll().get(i);
+            sm.put(pharmacieService.distance(Double.parseDouble(latitude), Double.parseDouble(longitude), Double.parseDouble(pharmacie.getLatitude()),
+                    Double.parseDouble(pharmacie.getLongitude())),pharmacie.getId());
+        }
+        Set s = sm.entrySet();
+        Iterator i = s.iterator();
+        while (i.hasNext())
+        {
+            Map.Entry m = (Map.Entry)i.next();
+
+            double key = (double)m.getKey();
+            long value = (long)m.getValue();
+        }
+        Object[] test = sm.keySet().toArray();
+
+        Object keyfinal  = sm.keySet().toArray()[0];
+        Pharmacie proche = pharmacieRepository.findPharmacieById(sm.get(keyfinal));
+        return proche;
+
+    }
+
     @PostMapping("/Post")
     public ResponseEntity  createPharmacie(@RequestBody Pharmacie pharmacie) {
         pharmacieRepository.save(pharmacie);
