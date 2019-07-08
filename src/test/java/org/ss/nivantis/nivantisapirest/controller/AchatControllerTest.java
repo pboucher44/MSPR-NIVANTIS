@@ -30,11 +30,11 @@ public class AchatControllerTest {
         final Long id = 0L;
         final Optional<Achat> expectedResult = null;
         DMO monDmo = new DMO("BOUCHER","Pierre","pboucher","pboucher",new ArrayList<Achat>());
-        Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
+        Pharmacie maPharmacie = new Pharmacie("adresse","87","44444","2.5","6.1","maPharmacie",new ArrayList<Achat>());
         maPharmacie.setId(0L);
         Client monClient = new Client("BOUCHER","Pierre","mail@mail.fr","0654478956",new ArrayList<Achat>());
         monClient.setId(0L);
-        Produit monProduit = new Produit(5,"libelle",new ArrayList<Achat>());
+        Produit monProduit = new Produit("5","libelle",new ArrayList<Achat>());
         monProduit.setId(0L);
         Achat monAchatASave = new Achat(monDmo,maPharmacie,monClient,monProduit);
 

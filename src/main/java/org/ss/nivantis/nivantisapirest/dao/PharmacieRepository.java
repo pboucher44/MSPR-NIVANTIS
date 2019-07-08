@@ -11,7 +11,7 @@ public interface PharmacieRepository extends CrudRepository<Pharmacie, Long> {
 
     List<Pharmacie> findAll();
     Pharmacie findPharmacieById(Long id);
-
+    Pharmacie findPharmacieByLibelle(String libelle);
 
 
 

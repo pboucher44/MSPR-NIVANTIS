@@ -9,7 +9,7 @@ import java.util.List;
 public class Produit {
 
     private @Id @GeneratedValue long id;
-    private double prix;
+    private String prix;
     private String libelle;
     @OneToMany(targetEntity = Achat.class)
     private List<Achat> achats;
@@ -19,7 +19,7 @@ public class Produit {
     }
 
 
-    public Produit(double prix, String libelle, List<Achat> achats) {
+    public Produit(String prix, String libelle, List<Achat> achats) {
         this.prix = prix;
         this.libelle = libelle;
         this.achats = achats;
@@ -33,11 +33,11 @@ public class Produit {
         this.id = id;
     }
 
-    public double getPrix() {
+    public String getPrix() {
         return prix;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(String prix) {
         this.prix = prix;
     }
 

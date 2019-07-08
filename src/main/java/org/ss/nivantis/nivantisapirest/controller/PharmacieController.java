@@ -29,6 +29,13 @@ public class PharmacieController {
         return (Collection<Pharmacie>) pharmacieRepository.findAll();
     }
 
+    @GetMapping("/get/PharmacieByLibelle")
+    public long getIdPharmacieWithLibelle(@RequestParam("libelle") String libelle)
+    {
+        Pharmacie ph = pharmacieRepository.findPharmacieByLibelle(libelle);
+        return ph.getId();
+
+    }
     @GetMapping("/get/PharmacieProche")
     public String findProche(@RequestParam("latitude") String latitude, @RequestParam("longitude") String longitude)
     {

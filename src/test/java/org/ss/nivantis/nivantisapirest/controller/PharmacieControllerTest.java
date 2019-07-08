@@ -49,7 +49,7 @@ public class PharmacieControllerTest {
     public void testFindById() {
         // Setup
         final Long id = 0L;
-        Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
+        Pharmacie maPharmacie = new Pharmacie("adresse","87","44444","2.5","6.1","maPharmacie",new ArrayList<Achat>());
         final Optional<Pharmacie> expectedResult = Optional.of(maPharmacie);
         when(pharmacieControllerUnderTest.pharmacieRepository.findById(id)).thenReturn(Optional.of(maPharmacie));
 
@@ -64,7 +64,7 @@ public class PharmacieControllerTest {
     public void testFindPositionOfPhamarcie() {
         // Setup
         final Long id = 0L;
-        Pharmacie maPharmacie = new Pharmacie("adresse",87,44444,"2.5","6.1","maPharmacie",new ArrayList<Achat>());
+        Pharmacie maPharmacie = new Pharmacie("adresse","87","44444","2.5","6.1","maPharmacie",new ArrayList<Achat>());
         final Optional<Pharmacie> expectedResult = Optional.of(maPharmacie);
         when(pharmacieControllerUnderTest.pharmacieRepository.findById(id)).thenReturn(Optional.of(maPharmacie));
 

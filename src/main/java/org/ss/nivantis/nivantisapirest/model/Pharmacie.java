@@ -13,8 +13,8 @@ public class Pharmacie {
 
     private @Id @GeneratedValue Long id;
     private String  adresse;
-    private int numero;
-    private int codePostal;
+    private String numero;
+    private String codePostal;
     private String latitude;
     private String longitude;
     private String libelle;
@@ -25,7 +25,7 @@ public class Pharmacie {
 
     }
 
-    public Pharmacie(String adresse, int numero, int codePostal, String latitude, String longitude, String libelle, List<Achat> achats) {
+    public Pharmacie(String adresse, String numero, String codePostal, String latitude, String longitude, String libelle, List<Achat> achats) {
         this.adresse = adresse;
         this.numero = numero;
         this.codePostal = codePostal;
@@ -51,19 +51,19 @@ public class Pharmacie {
         this.adresse = adresse;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public int getCodePostal() {
+    public String getCodePostal() {
         return codePostal;
     }
 
-    public void setCodePostal(int codePostal) {
+    public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }
 

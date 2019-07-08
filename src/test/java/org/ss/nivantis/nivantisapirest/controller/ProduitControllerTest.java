@@ -29,7 +29,7 @@ public class ProduitControllerTest {
     public void testFindById() {
         // Setup
         final Long id = 0L;
-        Produit monProduit = new Produit(5,"libelle",new ArrayList<Achat>());
+        Produit monProduit = new Produit("5","libelle",new ArrayList<Achat>());
         final Optional<Produit> expectedResult = Optional.of(monProduit);
         when(produitControllerUnderTest.produitRepository.findById(id)).thenReturn(Optional.of(monProduit));
 

@@ -24,4 +24,6 @@ public class DMOController {
         dmoRepository.save(dmo);
         return ResponseEntity.ok(HttpStatus.OK);
     }
+
+
 }

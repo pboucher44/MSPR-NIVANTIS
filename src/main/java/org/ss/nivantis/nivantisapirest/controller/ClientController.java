@@ -19,6 +19,12 @@ public class ClientController {
         return clientRepository.findById(id);
     }
 
+
+    @GetMapping("/get/AllClients")
+    public Iterable<Client> findAll() {
+        return clientRepository.findAll();
+    }
+
     @PostMapping("/NewClient")
     public ResponseEntity createClient(@RequestBody Client client) {
         clientRepository.save(client);

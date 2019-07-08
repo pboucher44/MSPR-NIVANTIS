@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyBooleanPropertyBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/collections/ObservableList.java">
           <value>
             <set />
@@ -34,6 +39,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/controller/AchatController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/controller/ClientController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/controller/DMOController.java">
           <value>
             <set />
           </value>
@@ -93,6 +108,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/model/Produit.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/ss/nivantis/nivantisapirest/model/Question.java">
           <value>
             <set />
@@ -123,6 +143,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/controller/PharmacieControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/controller/ProduitControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/test/java/org/ss/nivantis/nivantisapirest/service/PharmacieServiceTest.java">
           <value>
             <set />
@@ -148,12 +178,52 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/object/Achat.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/object/Client.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/object/Pharmacie.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/object/Produit.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/AchatView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/AchatsPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/CalculatorPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/ContactPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/ContactView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/com/gluonapplication/views/MenuPresenter.java">
           <value>
             <set />
           </value>
@@ -179,6 +249,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/java/httpHelper/HttpHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/achat.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/achat.fxml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/calculator.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gui/GluonMobile-MultiViewProjectwithFXMLApp/src/main/resources/com/gluonapplication/views/contact.fxml">
           <value>
             <set />
           </value>
